@@ -9,10 +9,7 @@ set -x
 # project name and a brief description of the project.
 # Then it unzips the raw data provided by the client.
 
-if [ -d newproject ]; then
-  echo "Directory 'newproject' already exists. Please remove it before running this script."
-  exit 1
-fi
+
 mkdir newproject
 cd newproject
 
