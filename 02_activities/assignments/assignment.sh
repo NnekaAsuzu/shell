@@ -49,8 +49,11 @@ cp data/raw/*user*.log data/processed/user_logs/
 cp data/raw/*event*.log data/processed/event_logs/
 
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename)
-rm data/raw/*ipaddr*.log
-rm data/processed/user_logs/*ipaddr*.log
+rm data/raw/*ipaddr*
+rm data/raw/rawdata/*ipaddr*
+rm data/processed/user_logs/*ipaddr*
+
+
 
 # 8. Create inventory.txt listing all files in ./data/processed
 find data/processed -type f > data/inventory.txt
