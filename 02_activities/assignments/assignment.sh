@@ -9,10 +9,7 @@ set -x
 # project name and a brief description of the project.
 # Then it unzips the raw data provided by the client.
 
-if [ -d newproject ]; then
-  echo "Directory 'newproject' already exists. Please remove it before running this script."
-  exit 1
-fi
+
 mkdir newproject
 cd newproject
 
@@ -48,12 +45,11 @@ cp data/raw/*server*.log data/processed/server_logs/
 cp data/raw/*user*.log data/processed/user_logs/
 cp data/raw/*event*.log data/processed/event_logs/
 
-# 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename)
+
+# 7. Remove all files containing IP addresses
 rm data/raw/*ipaddr*
 rm data/raw/rawdata/*ipaddr*
 rm data/processed/user_logs/*ipaddr*
-
-
 
 # 8. Create inventory.txt listing all files in ./data/processed
 find data/processed -type f > data/inventory.txt
